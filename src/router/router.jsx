@@ -5,6 +5,9 @@ import About from "../components/About"
 import Career from "../components/Career"
 import Errorpage from "../components/Errorpage"
 import Newsletter from "../pages/Newsletter"
+import Auth_layout from "../Auth-Components/Auth_layout"
+import Login from "../Auth-Components/Login"
+import Register from "../Auth-Components/Register"
 
 const router = createBrowserRouter([
     {
@@ -35,6 +38,20 @@ const router = createBrowserRouter([
             },
         ]
     },
+    {
+        path:"/auth",
+        element: <Auth_layout/>,
+        children: [
+            {
+                path:"/auth/login",
+                element: <Login/>
+            },
+            {
+                path:"/auth/register",
+                element: <Register/>
+            }
+        ]
+    }
 ])
 
 export default router
